@@ -118,11 +118,10 @@ void RoutePlanner::AStarSearch()
     std::vector<RouteModel::Node> final_path;
     current_node = this->start_node;
     current_node->visited= true;
-    this->open_list.push_back(current_node);
     while (current_node != this->end_node)
     {
-        current_node = this->NextNode();
         this->AddNeighbors(current_node);
+        current_node = this->NextNode();
         
         
     }
